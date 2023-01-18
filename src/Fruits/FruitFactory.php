@@ -8,9 +8,9 @@ class FruitFactory
 
     protected int $maxWeight = 0;
     
-    public function __construct(protected string $type, string $config = '/config/fruits.php')
+    public function __construct(protected string $type, string $folder = 'config')
     {
-        $config = require __DIR__ . '/..' . $config;
+        $config = require __DIR__ . "/../$folder/fruits.php";
 
         if (array_key_exists($type, $config)) {
             $this->minWeight = $config[$type]['min_weight'];

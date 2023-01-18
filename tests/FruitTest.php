@@ -11,10 +11,12 @@ class FruitTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $this->path = '/../tests/fixtures/fruits.php';
-        $this->appleFactory = new FruitFactory('apple', $this->path);
-        $this->pearFactory = new FruitFactory('pear', $this->path);
-        $this->emptyFactory = new FruitFactory('empty', $this->path);
+
+        $this->folder = '../tests/fixtures';
+        
+        $this->appleFactory = new FruitFactory('apple', $this->folder);
+        $this->pearFactory = new FruitFactory('pear', $this->folder);
+        $this->emptyFactory = new FruitFactory('empty', $this->folder);
     }
 
     /** @test */
